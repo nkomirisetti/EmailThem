@@ -24,91 +24,81 @@ function openEmailScreen(name, response) {
 
 function createOfficialContainer(official, name) {
     const container = $('<div class="officialContainer"></div>');
+    
     container.append('<div class="officialName">' + official.name + '</div>');
     container.append('<div class="officialOffice">' + official.office + '</div>');
-    container.append(createOfficeContainer(official));
-    container.append(createPartyContainer(official));
-    container.append(createEmailContainer(official, name));
-    container.append(createSocialMediaContainer(official));
-    container.append(createPhoneNumberContainer(official));
+    container.append(createDivisionContainer(official));
+
+    const infoList = $('<ul></ul>');
+    infoList.append(partyInfo(official));
+    infoList.append(socialInfo(official));
+    infoList.append(phoneInfo(official));
+    container.append(infoList);
+
+    container.append(createEmailButton(official, name));
 
     return container;
 }
 
-function createEmailContainer(official, name) {
-    // TODO support multiple emails
+function createDivisionContainer(official) {
+    if (official.division != undefined) {
+        return $('<div class="officialDivision">' + official.division + '</div>');
+    } else {
+        return '';
+    }
+}
+
+function socialInfo(official) {
+    let output = '';
+    if (official.channels != undefined) {
+        for (const social of official.channels) {
+            switch (social.type) {
+                case 'Twitter':
+                    output += '<li class="twitter"><a href="https://twitter.com/' + social.id + '">@' + social.id + '</a></li>';
+                    break;
+                case 'YouTube':
+                    output += '<li class="youtube"><a href="https://www.youtube.com/channel/' + social.id + '">YouTube Channel</a></li>';
+                    break;
+                case 'Facebook':
+                    output += '<li class="facebook"><a href="https://www.facebook.com/' + social.id + '">' + social.id + '</a></li>';
+                    break;
+            }
+        }
+    }
+    return output;
+}
+
+function partyInfo(official) {
+    if (official.party != undefined) {
+        if (official.party.includes('epublican')) {
+            return '<li class="republican">Republican</li>';
+        } else if (official.party.includes('emocrat')) {
+            return '<li data-type="democrat">Democrat</li>';
+        } else {
+            return '<li class="democrat">Democrat</li>'; // TODO other party
+        }
+    }
+}
+
+function phoneInfo(official) {
+    // TODO add phone number container
+    let output = '';
+    if (official.phones != undefined) {
+        for (const phone of official.phones) {
+            output += '<li class="phone"><a class="officialPhone" href="tel:' + phone + '">' + phone + '</a></li>';
+        }
+    }
+
+    return output;
+}
+
+function createEmailButton(official, name) {
+    // TODO email multiple
     if (official.emails != undefined) {
         console.log(official.emails);
         //<a href="mailto:test@example.com?subject=Testing out mailto!&body=This is only a test!">Second Example</a>
         return $('<a class="officialEmail" href="mailto:' + official.emails[0] + '?subject=Testing out mailto!&body=This is only a test from ' + name + '.">Email this person</a>');
         // TODO maybe make this a button we will see
-    } else {
-        return '';
-    }
-}
-
-function createSocialMediaContainer(official) {
-    if (official.channels != undefined) {
-        const socialDiv = $('<div class="socialChannels"></div>');
-
-        for (const social of official.channels) {
-            const socialBlade = $('<div class="socialBlades"></div>');
-            switch (social.type) {
-                case 'Twitter':
-                    socialBlade.append('<img src="assets/twitter.png">');
-                    socialBlade.append('<a class="twitterLink" href="https://twitter.com/' + social.id + '">' + social.id + '</a>');
-                    break;
-                case 'YouTube':
-                    socialBlade.append('<img src="assets/youtube.png">');
-                    socialBlade.append('<a class="twitterLink" href="https://www.youtube.com/channel/' + social.id + '">YouTube Channel</a>');
-                    break;
-                case 'Facebook':
-                    socialBlade.append('<img src="assets/facebook.png">');
-                    socialBlade.append('<a class="twitterLink" href="https://www.facebook.com/' + social.id + '">' + social.id + '</a>');
-                    break;
-            }
-            socialDiv.append(socialBlade);
-        }
-
-        return socialDiv;
-    } else {
-        return '';
-    }
-}
-
-function createPartyContainer(official) {
-    if (official.party != undefined) {
-        const partyBlade = $('<div class="politicalParty"></div>');
-
-        if (official.party.includes('ebulican')) {
-            partyBlade.append('<img src="assets/republican.png">');
-            partyBlade.append('<div class="partyName">Republican</div>');
-        } else if (official.party.includes('emocrat')) {
-            partyBlade.append('<img src="assets/democrat.png">');
-            partyBlade.append('<div class="partyName">Democrat</div>');
-        } else {
-            partyBlade.append('<div class="partyName">' + official.party + '</div>');
-        }
-
-        return partyBlade;
-    } else {
-        return '';
-    }
-
-}
-
-function createOfficeContainer(official) {
-    if (official.office != undefined) {
-        return $('<div class="officialOffice">' + official.office + '</div>');
-    } else {
-        return '';
-    }
-}
-
-function createPhoneNumberContainer(official) {
-    // TODO add phone number container
-    if (official.phones != undefined) {
-        return $('<a class="officialPhone" href="tel:' + official.phones[0] + '">' + official.phones[0] + '</a>');
     } else {
         return '';
     }

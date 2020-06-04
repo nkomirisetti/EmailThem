@@ -1,6 +1,6 @@
 function openLoadingScreen(name, address) {
     const bodyContainer = $('<div class=\'bodyContainer\'></div>');
-    bodyContainer.append(('<div class =\'centerText\'>Pulling up public government records...</div>'));
+    bodyContainer.append(('<div class =\'centerText\'>Pulling up government records...</div>'));
 
 
     $.ajax(apiCall(address)).done(function (response) {

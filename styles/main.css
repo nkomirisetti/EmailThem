@@ -1,0 +1,123 @@
+body {
+    background: #181818;
+}
+
+#rootContainer {
+    text-align: center;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    padding-top: 3vh;
+}
+
+h1 {
+    font-size: 15vmin;
+    color: white;
+    font-family: 'Abril Fatface', cursive;
+}
+
+h2 {
+    font-family: 'Noto Sans HK', sans-serif;
+    font-size: 2em;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    color: white;
+}
+
+.footerContainer {
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    width: 100vw;
+    margin-bottom: 2vh;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 3vmin;
+    color: gainsboro;
+    /* TODO fix the url color */
+}
+
+.inputBox {
+    margin: 1vh;
+    border: none;
+    border-bottom: 10px solid white;
+    color: white;
+    background-color: #383838;
+    font-size: 4vmin;
+    font-family: 'Jost', sans-serif;
+    padding: 1vmin;
+    width: 80vw;
+}
+
+.submitButton {
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 3vh;
+    border-radius: 8px;
+    padding: 16px 32px;
+    border: 3px solid rgb(12, 28, 30);
+    font-size: 6vmin;
+    background-color: rgb(16, 35, 63);
+    color: #E1E1E1;
+    margin-bottom: 5vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+}
+
+.centerText {
+    text-align: center;
+    padding-top: 40vh;
+    font-size: 5vmin;
+    color: white;
+    font-family: 'Abril Fatface', cursive;
+}
+
+button {
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 3vh;
+    border-radius: 8px;
+    padding: 16px 32px;
+    border: 3px solid rgb(12, 28, 30);
+    font-size: 6vmin;
+    background-color: rgb(16, 35, 63);
+    color: #E1E1E1;
+    margin-bottom: 5vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+}
+
+.officialContainer {
+    text-align: left;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 3vh;
+    border-radius: 8px;
+    padding: 16px 32px;
+    border: 3px solid rgb(12, 28, 30);
+    /* background-color: rgb(16, 35, 63); */
+    background-color: #383838;
+    color: #E1E1E1;
+    margin-bottom: 5vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+}
+
+.officialName {
+    font-size: 6vmin;
+}
+
+.officialOffice {
+    font-size: 3vmin;
+    /* TODO italics font here */
+}
+
+.officialDivision {
+    font-size: 3vmin;
+}
+
+ul {
+    margin-block-start: 0;
+    font-size: 3vmin;
+    list-style: none;
+    padding-left: 0;
+}
+
+.republican {
+    padding-left: 4vmin;
+    background:url("../assets/republican.png");
+    background-repeat: no-repeat;
+    background-size: 3vmin;
+}
