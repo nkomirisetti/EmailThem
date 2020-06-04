@@ -1,5 +1,6 @@
 body {
     background: #181818;
+    font-size: 100%;
 }
 
 #rootContainer {
@@ -10,16 +11,18 @@ body {
 }
 
 h1 {
-    font-size: 15vmin;
+    font-size: 9.5em;
     color: white;
-    font-family: 'Abril Fatface', cursive;
+    
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 2vh;
 }
 
 h2 {
     font-family: 'Noto Sans HK', sans-serif;
     font-size: 2em;
-    padding-left: 10vw;
-    padding-right: 10vw;
+    /* padding-left: 10vw;
+    padding-right: 10vw; */
     color: white;
 }
 
@@ -30,7 +33,7 @@ h2 {
     width: 100vw;
     margin-bottom: 2vh;
     font-family: 'Open Sans', sans-serif;
-    font-size: 3vmin;
+    font-size: 2em;
     color: gainsboro;
     /* TODO fix the url color */
 }
@@ -41,7 +44,7 @@ h2 {
     border-bottom: 10px solid white;
     color: white;
     background-color: #383838;
-    font-size: 4vmin;
+    font-size: 3em;
     font-family: 'Jost', sans-serif;
     padding: 1vmin;
     width: 80vw;
@@ -53,7 +56,7 @@ h2 {
     border-radius: 8px;
     padding: 16px 32px;
     border: 3px solid rgb(12, 28, 30);
-    font-size: 6vmin;
+    font-size: 6em;
     background-color: rgb(16, 35, 63);
     color: #E1E1E1;
     margin-bottom: 5vh;
@@ -63,7 +66,7 @@ h2 {
 .centerText {
     text-align: center;
     padding-top: 40vh;
-    font-size: 5vmin;
+    font-size: 3em;
     color: white;
     font-family: 'Abril Fatface', cursive;
 }
@@ -74,7 +77,7 @@ button {
     border-radius: 8px;
     padding: 16px 32px;
     border: 3px solid rgb(12, 28, 30);
-    font-size: 6vmin;
+    font-size: 3em;
     background-color: rgb(16, 35, 63);
     color: #E1E1E1;
     margin-bottom: 5vh;
@@ -96,28 +99,74 @@ button {
 }
 
 .officialName {
-    font-size: 6vmin;
+    font-size: 6em;
 }
 
 .officialOffice {
-    font-size: 3vmin;
-    /* TODO italics font here */
+    font-size: 3.5em;
 }
 
 .officialDivision {
-    font-size: 3vmin;
+    font-size: 3.5em;
 }
 
 ul {
     margin-block-start: 0;
-    font-size: 3vmin;
+    font-size: 3em;
     list-style: none;
     padding-left: 0;
 }
 
+li{
+    padding-top: .5vh;
+}
+
 .republican {
-    padding-left: 4vmin;
+    padding-left: 2em;
     background:url("../assets/republican.png");
     background-repeat: no-repeat;
-    background-size: 3vmin;
+    background-size: 1.6em;
 }
+
+.democrat {
+    padding-left: 2em;
+    background:url("../assets/democrat.png");
+    background-repeat: no-repeat;
+    background-size: 1.7em;
+    background-position: center;
+}
+
+.twitter {
+    padding-left: 2em;
+    background:url("../assets/twitter.png");
+    background-repeat: no-repeat;
+    background-size: 1.7em;
+}
+
+.facebook {
+    padding-left: 2em;
+    background:url("../assets/facebook.png");
+    background-repeat: no-repeat;
+    background-size: 1.7em;
+}
+
+.youtube {
+    padding-left: 2em;
+    background:url("../assets/youtube.png");
+    background-repeat: no-repeat;
+    background-size: 1.7em;
+}
+
+.phone {
+    padding-left: 2em;
+    background:url("../assets/phone.png");
+    background-repeat: no-repeat;
+    background-size: 1.7em;
+
+}
+
+li a {
+    color: white;
+}
+
+
