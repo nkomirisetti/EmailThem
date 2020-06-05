@@ -48,5 +48,5 @@ Thank you for your time and I hope that we can work together to protect the ${ci
 \r\n\r\n %0D%0A %0D%0A 
 \r\n\r\n %0D%0A %0D%0A 
 \r\n\r\n %0D%0A %0D%0A 
-Sincerely,`
+Sincerely,`;
 }
