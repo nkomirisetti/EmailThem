@@ -108,7 +108,7 @@ function emailInfo(official) {
 
 function createEmailButton(official, name, city, state) {
     if (official.emails != undefined) {
-        return $('<a class="officialEmail" href="mailto:' + official.emails[0] + '?subject=' + official.office + ', it is time for action!&body=' + makeLetter(name, official, city, state) + '"><button class="officialEmail">Auto Email</button></a>');
+        return $('<a class="officialEmail" href="' + makeEmail(name, official, city, state) + '"><button class="officialEmail">Auto Email</button></a>');
     } else {
         return '';
     }
