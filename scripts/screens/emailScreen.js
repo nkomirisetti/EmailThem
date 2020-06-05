@@ -4,15 +4,11 @@ function openEmailScreen(name, response) {
     bodyContainer.append('<h1>' + (officials.length - 2) + ' officials found:</h1>');
 
     // finds district of each office
-
     for (const division in response.divisions){
         for (const officeIndex of response.divisions[division].officeIndices) {
             response.offices[officeIndex].division = response.divisions[division].name;
         }
 
-    }
-
-    for (const division of response.divisions) {
     }
 
     // finds title of each official and district
