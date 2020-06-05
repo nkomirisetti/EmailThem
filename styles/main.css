@@ -116,7 +116,8 @@ ul {
 }
 
 li{
-    padding-top: 1.2vh;
+    padding-top: .5em;
+    padding-bottom: .5em;
 }
 
 .republican {
