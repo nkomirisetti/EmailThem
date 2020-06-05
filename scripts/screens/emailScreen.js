@@ -57,7 +57,7 @@ function socialInfo(official) {
                     output += '<li class="twitter"><a href="https://twitter.com/' + social.id + '">@' + social.id + '</a></li>';
                     break;
                 case 'YouTube':
-                    output += '<li class="youtube"><a href="https://www.youtube.com/channel/' + social.id + '">YouTube Channel</a></li>';
+                    output += '<li class="youtube"><a href="https://www.youtube.com/user/' + social.id + '">YouTube Channel</a></li>';
                     break;
                 case 'Facebook':
                     output += '<li class="facebook"><a href="https://www.facebook.com/' + social.id + '">' + social.id + '</a></li>';

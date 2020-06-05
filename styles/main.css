@@ -126,7 +126,7 @@ li{
     padding-left: 2em;
     background:url("../assets/republican.png");
     background-repeat: no-repeat;
-    background-size: 1.6em;
+    background-size: 1.7em;
 }
 
 .democrat {
@@ -169,5 +169,3 @@ li{
 li a {
     color: white;
 }
-
-
