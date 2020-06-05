@@ -13,7 +13,7 @@ Sincerely,
 `
 }
 
-function makeLetter2(userName, official, city, state) {
+function makeLetter(userName, official, city, state) {
 `Dear ${official.name},
 \r\n\r\n %0D%0A %0D%0A
 \r\n\r\n %0D%0A %0D%0A
