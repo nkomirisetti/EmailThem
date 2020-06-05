@@ -13,7 +13,6 @@ body {
 h1 {
     font-size: 9.5em;
     color: white;
-    
     font-family: 'Open Sans', sans-serif;
     margin-bottom: 2vh;
 }
@@ -21,8 +20,6 @@ h1 {
 h2 {
     font-family: 'Noto Sans HK', sans-serif;
     font-size: 2em;
-    /* padding-left: 10vw;
-    padding-right: 10vw; */
     color: white;
 }
 
@@ -163,7 +160,6 @@ li{
     background:url("../assets/phone.png");
     background-repeat: no-repeat;
     background-size: 1.7em;
-
 }
 
 li a {
