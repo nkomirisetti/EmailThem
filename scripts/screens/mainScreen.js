@@ -20,5 +20,6 @@ function openMainScreen() {
         });
     });
 
+    $.post('https://feedback-unc-purity.herokuapp.com/score?score=' + 0 + '&category=emails');
     changeScreen(bodyContainer);
 }
