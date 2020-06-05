@@ -124,6 +124,7 @@ li{
     background:url("../assets/republican.png");
     background-repeat: no-repeat;
     background-size: 1.7em;
+    background-position: center;
     background-position-y: .5em;
 }
 
@@ -151,6 +152,7 @@ li{
     background-repeat: no-repeat;
     background-size: 1.7em;
     background-position: center;
+    background-position-y: .5em;
 }
 
 .youtube {
@@ -159,6 +161,7 @@ li{
     background-repeat: no-repeat;
     background-size: 1.7em;
     background-position: center;
+    background-position-y: .5em;
 }
 
 .phone {
@@ -167,6 +170,7 @@ li{
     background-repeat: no-repeat;
     background-size: 1.7em;
     background-position: center;
+    background-position-y: .5em;
 }
 
 li a {
