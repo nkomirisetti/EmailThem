@@ -136,6 +136,14 @@ li{
     background-position-y: .5em;
 }
 
+.genericparty{
+    padding-left: 2em;
+    background:url("../assets/party.png");
+    background-repeat: no-repeat;
+    background-size: 1.7em;
+    background-position-y: .5em;   
+}
+
 .twitter {
     padding-left: 2em;
     background:url("../assets/twitter.png");
