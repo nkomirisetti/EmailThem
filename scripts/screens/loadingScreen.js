@@ -5,12 +5,10 @@ function openLoadingScreen(name, address) {
 
     $.ajax(apiCall(address)).done(function (response) {
         rootContainer.fadeOut(500, function () {
-            console.log(response);
             openEmailScreen(name, response);
         });
     }).fail(function () {
         rootContainer.fadeOut(500, function () {
-            console.log('bad address');
             openFailScreen(address);
         });
     });

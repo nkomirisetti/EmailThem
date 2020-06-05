@@ -107,10 +107,7 @@ function emailInfo(official) {
 }
 
 function createEmailButton(official, name) {
-    // TODO email multiple
     if (official.emails != undefined) {
-        console.log(official.emails);
-        //<a href="mailto:test@example.com?subject=Testing out mailto!&body=This is only a test!">Second Example</a>
         return $('<a class="officialEmail" href="mailto:' + official.emails[0] + '?subject=' + official.office + ', it is time for action!&body=' + makeLetter(name, official) + '"><button class="officialEmail">Auto Email</button></a>');
     } else {
         return '';

@@ -3,9 +3,6 @@ function openMainScreen() {
     bodyContainer.append('<h1>Email Them.</h1>'); // TODO live refresh with emails sent
     bodyContainer.append('<h2>This website makes it easy to email your politicians. It finds their info, creates a template, and lets you email them in one click.</h2>')
 
-
-    //            <input class="inputBox" id="name" type="text" placeholder="Name? (optional)">
-
     const form = $(`
         <form id="userInfo" action="javascript:void(0)">
             <input class="inputBox" id="address" type="text" placeholder="Where do you live?">
