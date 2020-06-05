@@ -2,13 +2,14 @@ function openEmailScreen(name, response) {
     const officials = response.officials;
     const bodyContainer = $('<div class=\'bodyContainer\'></div>');
     bodyContainer.append('<h1>' + (officials.length - 2) + ' officials found:</h1>');
-
+    
     // finds district of each office
     for (const division in response.divisions){
-        for (const officeIndex of response.divisions[division].officeIndices) {
-            response.offices[officeIndex].division = response.divisions[division].name;
+        if (response.divisions[division].officeIndices != undefined){
+            for (const officeIndex of response.divisions[division].officeIndices) {
+                response.offices[officeIndex].division = response.divisions[division].name;
+            }
         }
-
     }
 
     // finds title of each official and district
@@ -31,14 +32,17 @@ function openEmailScreen(name, response) {
 }
 
 function mapLevels(levels) {
-    switch (levels) {
-        case 'country':
+    switch (levels[0]) {
+        case "country":
             return 'national';
-        case 'level1':
+        case 'administrativeArea1':
             return 'state';
-        case 'level2':
-            return 'local';
+        case 'administrativeArea2':
+            return 'county';
+        case 'locality':
+            return 'city';
         default:
+            console.log(levels)
             return levels;
     }
 }
