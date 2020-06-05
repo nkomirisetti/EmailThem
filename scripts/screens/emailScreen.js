@@ -79,7 +79,7 @@ function partyInfo(official) {
         } else if (official.party.includes('emocrat')) {
             return '<li class="democrat">Democrat</li>';
         } else {
-            return '<li class="genericparty">official.party</li>';
+            return '<li class="genericparty">' + official.party + '</li>';
         }
     }
 }
