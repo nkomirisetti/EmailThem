@@ -8,7 +8,7 @@ function openEmailScreen(name, response) {
             officials[response.divisions[division].officeIndices[officeIndex]].division = response.divisions[division].name;
         }
     }
-
+    // TODO add back button and my name info
     for (const office in response.offices) {
         for (const officeIndex in response.offices[office].officialIndices) {
             officials[response.offices[office].officialIndices[officeIndex]].office = response.offices[office].name;
@@ -19,13 +19,13 @@ function openEmailScreen(name, response) {
     officials.shift();
 
     for (const official in officials) {
-        bodyContainer.append(createOfficialContainer(officials[official], name));
+        bodyContainer.append(createOfficialContainer(officials[official], name, response.normalizedInput.city, response.normalizedInput.state));
     }
 
     changeScreen(bodyContainer);
 }
 
-function createOfficialContainer(official, name) {
+function createOfficialContainer(official, name, city, state) {
     const container = $('<div class="officialContainer"></div>');
 
     container.append('<div class="officialName">' + official.name + '</div>');
@@ -39,7 +39,7 @@ function createOfficialContainer(official, name) {
     infoList.append(emailInfo(official));
     container.append(infoList);
 
-    container.append(createEmailButton(official, name));
+    container.append(createEmailButton(official, name, city, state));
 
     return container;
 }
@@ -106,9 +106,9 @@ function emailInfo(official) {
     return output;
 }
 
-function createEmailButton(official, name) {
+function createEmailButton(official, name, city, state) {
     if (official.emails != undefined) {
-        return $('<a class="officialEmail" href="mailto:' + official.emails[0] + '?subject=' + official.office + ', it is time for action!&body=' + makeLetter(name, official) + '"><button class="officialEmail">Auto Email</button></a>');
+        return $('<a class="officialEmail" href="mailto:' + official.emails[0] + '?subject=' + official.office + ', it is time for action!&body=' + makeLetter(name, official, city, state) + '"><button class="officialEmail">Auto Email</button></a>');
     } else {
         return '';
     }
