@@ -5,7 +5,7 @@ function openMainScreen() {
     // TODO add number input if possible
     const form = $(`
         <form id="userInfo" action="javascript:void(0)">
-            <input class="inputBox" id="address" type="text" placeholder="Zip code?">
+            <input class="inputBox" id="address" type="text" placeholder="Zip code? (or address)">
             <input class ="submitButton" type="submit">
         </form>
     `);
