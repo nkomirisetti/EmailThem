@@ -1,7 +1,7 @@
 function openMainScreen() {
     const bodyContainer = $('<div class=\'bodyContainer\'></div>');
     bodyContainer.append('<h1>Email Them.</h1>'); // TODO live refresh with emails sent
-    bodyContainer.append('<h2>This website makes it easy to email your politicians. It finds their info, creates a template, and lets you email them in one click.</h2>')
+    bodyContainer.append('<h2>This website makes it easy to email your representatives. It finds their info, creates a template, and lets you email them in one click.</h2>')
 
     const form = $(`
         <form id="userInfo" action="javascript:void(0)">
