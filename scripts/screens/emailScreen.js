@@ -1,28 +1,45 @@
 function openEmailScreen(name, response) {
-    const bodyContainer = $('<div class=\'bodyContainer\'></div>');
-    bodyContainer.append('<h1>Your officials:</h1>');
     const officials = response.officials;
+    const bodyContainer = $('<div class=\'bodyContainer\'></div>');
+    bodyContainer.append('<h1>' + (officials.length - 2) + ' officials found:</h1>');
 
-    for (const division in response.divisions) {
-        for (const officeIndex in response.divisions[division].officeIndices) {
-            officials[response.divisions[division].officeIndices[officeIndex]].division = response.divisions[division].name;
-        }
-    }
-    // TODO add back button and my name info
-    for (const office in response.offices) {
-        for (const officeIndex in response.offices[office].officialIndices) {
-            officials[response.offices[office].officialIndices[officeIndex]].office = response.offices[office].name;
+    // finds district of each office
+    for (const division of response.divisions) {
+        for (const officeIndex of division.officeIndices) {
+            response.offices[officeIndex].division = division.name;
         }
     }
 
-    officials.shift();
-    officials.shift();
+    // finds title of each official and district
+    for (const office of response.offices) {
+        for (const officialIndex of office.officialIndices) {
+            officials[officialIndex].office = office.name;
+            officials[officialIndex].division = office.division;
+            officials[officialIndex].level = mapLevels(office.levels);
+        }
+    }
+
+    officials.shift(); // removes trump
+    officials.shift(); // removes pence
 
     for (const official in officials) {
         bodyContainer.append(createOfficialContainer(officials[official], name, response.normalizedInput.city, response.normalizedInput.state));
     }
 
     changeScreen(bodyContainer);
+}
+
+function mapLevels(levels) {
+    switch (levels) {
+        case 'country':
+            return 'national';
+        case 'level1':
+            return 'state';
+        case 'level2':
+            return 'local';
+        default:
+            return levels;
+    }
 }
 
 function createOfficialContainer(official, name, city, state) {
