@@ -1,4 +1,4 @@
-function makeLetter2(userName, official) {
+function makeLetter(userName, official) {
 return `Dear ${official.name},
 \r\n\r\n %0D%0A %0D%0A
 I'm writing you today to address an issue that affects all of us. For far too long, we have done too little to address systemic inequalities in our nation. The problem is widespread, and affects everything from employment and affordable housing, to education and safety. As your constituent, I want you to know that these are issues very dear to me, and will directly influence which officials I support.
