@@ -168,6 +168,14 @@ li{
     background-position-y: .5em;
 }
 
+.email {
+    padding-left: 2em;
+    background:url("../assets/email.png");
+    background-repeat: no-repeat;
+    background-size: 1.7em;
+    background-position-y: .5em;
+}
+
 li a {
     color: white;
 }
