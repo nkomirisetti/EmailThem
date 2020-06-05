@@ -14,7 +14,7 @@
 // }
 
 function makeLetter(userName, official, city, state) {
-`Dear ${official.name},
+return `Dear ${official.name},
 \r\n\r\n %0D%0A %0D%0A
 \r\n\r\n %0D%0A %0D%0A
 I am a constituent in ${city}, ${state}. I am writing to you today to ask what you are doing, as the ${official.office}, to ensure that your officers are not abusing their power and are held accountable for their actions.
