@@ -9,7 +9,6 @@ When lives are at stake, inaction is unacceptable. I appreciate you taking the t
 \n\n %0D%0A %0D%0A
 Sincerely,
 
-${userName}
 %0D%0A %0D%0A
 `
 }
