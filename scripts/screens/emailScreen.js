@@ -24,7 +24,7 @@ function openEmailScreen(name, response) {
 
 function createOfficialContainer(official, name) {
     const container = $('<div class="officialContainer"></div>');
-    
+
     container.append('<div class="officialName">' + official.name + '</div>');
     container.append('<div class="officialOffice">' + official.office + '</div>');
     container.append(createDivisionContainer(official));
@@ -81,7 +81,6 @@ function partyInfo(official) {
 }
 
 function phoneInfo(official) {
-    // TODO add phone number container
     let output = '';
     if (official.phones != undefined) {
         for (const phone of official.phones) {
@@ -97,8 +96,7 @@ function createEmailButton(official, name) {
     if (official.emails != undefined) {
         console.log(official.emails);
         //<a href="mailto:test@example.com?subject=Testing out mailto!&body=This is only a test!">Second Example</a>
-        return $('<a class="officialEmail" href="mailto:' + official.emails[0] + '?subject=Testing out mailto!&body=This is only a test from ' + name + '."><button class="officialEmail">Email this person</button></a>');
-        // TODO maybe make this a button we will see
+        return $('<a class="officialEmail" href="mailto:' + official.emails[0] + '?subject=' +official.office + ', it is time for action!&body=' + makeLetter(name, official) + '"><button class="officialEmail">Email this official</button></a>');
     } else {
         return '';
     }
