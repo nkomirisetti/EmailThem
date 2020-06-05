@@ -14,7 +14,7 @@ function openMainScreen() {
     `);
 
     bodyContainer.append(form);
-    bodyContainer.append('<div class=\'footerContainer\'>Made with 💙 by <a href="https://komirisetti.com">Nikhil Komirisetti</a></div>');
+    bodyContainer.append('<div class=\'footerContainer\'>Made with 💙 by <a href="https://komirisetti.com" target="_blank">Nikhil Komirisetti</a></div>');
 
     form.submit(function (event) {
         rootContainer.fadeOut(500, function () {

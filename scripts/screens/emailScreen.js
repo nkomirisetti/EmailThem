@@ -58,13 +58,13 @@ function socialInfo(official) {
         for (const social of official.channels) {
             switch (social.type) {
                 case 'Twitter':
-                    output += '<li class="twitter"><a href="https://twitter.com/' + social.id + '">@' + social.id + '</a></li>';
+                    output += '<li class="twitter"><a href="https://twitter.com/' + social.id + '" target="_blank">@' + social.id + '</a></li>';
                     break;
                 case 'YouTube':
-                    output += '<li class="youtube"><a href="https://www.youtube.com/user/' + social.id + '">YouTube Channel</a></li>';
+                    output += '<li class="youtube"><a href="https://www.youtube.com/user/' + social.id + '" target="_blank">YouTube Channel</a></li>';
                     break;
                 case 'Facebook':
-                    output += '<li class="facebook"><a href="https://www.facebook.com/' + social.id + '">' + social.id + '</a></li>';
+                    output += '<li class="facebook"><a href="https://www.facebook.com/' + social.id + '" target="_blank">' + social.id + '</a></li>';
                     break;
             }
         }
