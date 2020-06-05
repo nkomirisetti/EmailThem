@@ -22,8 +22,6 @@ function openEmailScreen(name, response) {
         bodyContainer.append(createOfficialContainer(officials[official], name));
     }
 
-
-
     changeScreen(bodyContainer);
 }
 
@@ -38,6 +36,7 @@ function createOfficialContainer(official, name) {
     infoList.append(partyInfo(official));
     infoList.append(socialInfo(official));
     infoList.append(phoneInfo(official));
+    infoList.append(emailInfo(official));
     container.append(infoList);
 
     container.append(createEmailButton(official, name));
