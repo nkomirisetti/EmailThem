@@ -124,6 +124,7 @@ li{
     background:url("../assets/republican.png");
     background-repeat: no-repeat;
     background-size: 1.7em;
+    background-position-y: .5em;
 }
 
 .democrat {
@@ -132,6 +133,7 @@ li{
     background-repeat: no-repeat;
     background-size: 1.7em;
     background-position: center;
+    background-position-y: .5em;
 }
 
 .twitter {
@@ -139,6 +141,8 @@ li{
     background:url("../assets/twitter.png");
     background-repeat: no-repeat;
     background-size: 1.7em;
+    background-position: center;
+    background-position-y: .5em;
 }
 
 .facebook {
@@ -146,6 +150,7 @@ li{
     background:url("../assets/facebook.png");
     background-repeat: no-repeat;
     background-size: 1.7em;
+    background-position: center;
 }
 
 .youtube {
@@ -153,6 +158,7 @@ li{
     background:url("../assets/youtube.png");
     background-repeat: no-repeat;
     background-size: 1.7em;
+    background-position: center;
 }
 
 .phone {
@@ -160,6 +166,7 @@ li{
     background:url("../assets/phone.png");
     background-repeat: no-repeat;
     background-size: 1.7em;
+    background-position: center;
 }
 
 li a {
