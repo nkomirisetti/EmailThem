@@ -75,9 +75,9 @@ function socialInfo(official) {
 function partyInfo(official) {
     if (official.party != undefined) {
         if (official.party.includes('epublican')) {
-            return '<li class="republican">Republican</li>';
+            return '<li class="republican">' + official.party + '</li>';
         } else if (official.party.includes('emocrat')) {
-            return '<li class="democrat">Democrat</li>';
+            return '<li class="democrat">' + official.party + '</li>';
         } else {
             return '<li class="genericparty">' + official.party + '</li>';
         }
