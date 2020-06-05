@@ -171,3 +171,9 @@ li{
 li a {
     color: white;
 }
+
+.officialEmail {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 3vh;
+}

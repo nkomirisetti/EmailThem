@@ -97,7 +97,7 @@ function createEmailButton(official, name) {
     if (official.emails != undefined) {
         console.log(official.emails);
         //<a href="mailto:test@example.com?subject=Testing out mailto!&body=This is only a test!">Second Example</a>
-        return $('<a class="officialEmail" href="mailto:' + official.emails[0] + '?subject=Testing out mailto!&body=This is only a test from ' + name + '.">Email this person</a>');
+        return $('<a class="officialEmail" href="mailto:' + official.emails[0] + '?subject=Testing out mailto!&body=This is only a test from ' + name + '."><button class="officialEmail">Email this person</button></a>');
         // TODO maybe make this a button we will see
     } else {
         return '';
