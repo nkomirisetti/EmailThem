@@ -15,9 +15,14 @@ function openEmailScreen(name, response) {
         }
     }
 
+    officials.shift();
+    officials.shift();
+
     for (const official in officials) {
         bodyContainer.append(createOfficialContainer(officials[official], name));
     }
+
+
 
     changeScreen(bodyContainer);
 }
