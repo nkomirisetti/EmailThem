@@ -16,7 +16,7 @@ function openMainScreen() {
     `);
 
     bodyContainer.append(form);
-    bodyContainer.append('<div class=\'footerContainer\'>Made with 💙 by <a href="https://komirisetti.com" target="_blank">Nikhil Komirisetti</a></div>');
+    bodyContainer.append('<div class=\'footerContainer\'>Made with 💙 by <a href="https://komirisetti.com" target="_blank">Nikhil Komirisetti</a> <br> and with lots of help from <a href="https://www.linkedin.com/in/sophia-shaikh-4ab034134/" target="_blank">Sophia Shaikh</a> and <a href="https://www.linkedin.com/in/jennifer-shi-ab106a12b/" target="_blank">Jennifer Shi</a></div>');
 
     form.submit(function (event) {
         rootContainer.fadeOut(500, function () {
