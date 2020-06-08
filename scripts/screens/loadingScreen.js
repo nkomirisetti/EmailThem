@@ -32,10 +32,11 @@ function openFailScreen(address) {
 
 
 function apiCall(address) {
+    const apiKey = 'AIzaSyCqCSPlacdYJPMSfB-FMNZPN7wnIWMYzF0';
     return {
         "url": "https://www.googleapis.com/civicinfo/v2/representatives?address=" +
             address +
-            "&includeOffices=true&key=AIzaSyCqCSPlacdYJPMSfB-FMNZPN7wnIWMYzF0",
+            "&includeOffices=true&key=" + apiKey,
         "method": "GET",
         "timeout": 0,
     };

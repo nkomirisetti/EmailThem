@@ -59,10 +59,11 @@ function createOfficialContainer(official, name, city, state) {
     infoList.append(socialInfo(official));
     infoList.append(phoneInfo(official));
     infoList.append(emailInfo(official));
+    
     container.append(infoList);
 
     container.append(createEmailButton(official, name, city, state));
-
+    container.append(createTweetButton(official));
     return container;
 }
 
@@ -134,4 +135,15 @@ function createEmailButton(official, name, city, state) {
     } else {
         return '';
     }
+}
+
+function createTweetButton(official) {
+    if (official.channels != undefined) {
+        for (const social of official.channels) {
+            if (social.type == 'Twitter'){
+                return $('<a class="officialEmail" href="' + makeTweet(social) + '"><button class="officialEmail">Auto Tweet</button></a>');
+            }
+        }
+    }
+    return '';
 }

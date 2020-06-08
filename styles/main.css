@@ -23,6 +23,12 @@ h2 {
     color: white;
 }
 
+h3 {
+    font-family: 'Noto Sans HK', sans-serif;
+    font-size: 4em;
+    color: white;
+}
+
 .footerContainer {
     position: fixed;
     bottom: 0;
@@ -33,6 +39,10 @@ h2 {
     font-size: 2em;
     color: gainsboro;
     /* TODO fix the url color */
+}
+
+.footerContainer > a {
+    color: gainsboro;
 }
 
 .inputBox {

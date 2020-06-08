@@ -1,7 +1,12 @@
 function openMainScreen() {
     const bodyContainer = $('<div class=\'bodyContainer\'></div>');
-    bodyContainer.append('<h1>Email Them.</h1>'); // TODO live refresh with emails sent
-    bodyContainer.append('<h2>Hold your elected representatives accountable to keeping Black lives safe. This page finds their contact info, creates, and sends an email to speak out against police brutality.</h2>')
+    bodyContainer.append(`<div style="display: inline;">
+    <h1 style="display: inline;">Email </h1>
+    <h3 style="display: inline;">(and tweet)</h3>
+    <h1 style="display: inline;"> Them</h1>
+</div>
+`)
+    bodyContainer.append('<h2>Hold your elected representatives accountable to keeping Black lives safe. This page finds their contact info, creates, and sends an email or tweet to them.</h2>')
     // TODO add number input if possible
     const form = $(`
         <form id="userInfo" action="javascript:void(0)">
