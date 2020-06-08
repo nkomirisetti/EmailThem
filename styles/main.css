@@ -32,12 +32,13 @@ h3 {
 .footerContainer {
     position: fixed;
     bottom: 0;
-    text-align: center;
     width: 100vw;
     margin-bottom: 2vh;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Noto Sans HK', sans-serif;
     font-size: 2em;
     color: gainsboro;
+    padding-left: 0;
+    padding-right: 0;
     /* TODO fix the url color */
 }
 
