@@ -2,9 +2,10 @@ function getFilter(official) {
     switch (official.name) {
         case 'Donald J. Trump':
         case 'Mike Pence':
-            return 'hidden';
         case 'Paul Ferguson':
-            return 'no-auto';
+            return 'hidden';
+            // case 'Paul Ferguson':
+            //     return 'no-auto';
         default:
             return 'full';
     }
