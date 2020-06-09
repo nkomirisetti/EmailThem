@@ -6,7 +6,7 @@ function makeEmailAddress(official) {
     return official.emails[0]; // TODO add both emails
 }
 
-function makeEmail(userName, official, city, state) {
+function makeEmail(official, city, state) {
     const email = encodeURI(makeEmailAddress(official));
     const subject = encodeURI(makeSubject(official));
     const body = encodeURI(makeBody(official, city, state));

@@ -1,70 +1,41 @@
 function openEmailScreen(name, response) {
-    const officials = response.officials;
     const bodyContainer = $('<div class=\'bodyContainer\'></div>');
-    bodyContainer.append('<h1>' + (officials.length - 2) + ' officials found:</h1>');
-    
-    // finds district of each office
-    for (const division in response.divisions){
-        if (response.divisions[division].officeIndices != undefined){
-            for (const officeIndex of response.divisions[division].officeIndices) {
-                response.offices[officeIndex].division = response.divisions[division].name;
-            }
-        }
-    }
+    const officials = setupOfficials(response);
+    const count = countHidden(officials);
 
-    // finds title of each official and district
-    for (const office of response.offices) {
-        for (const officialIndex of office.officialIndices) {
-            officials[officialIndex].office = office.name;
-            officials[officialIndex].division = office.division;
-            officials[officialIndex].level = mapLevels(office.levels);
-        }
-    }
-
-    officials.shift(); // removes trump
-    officials.shift(); // removes pence
-
-    for (const official in officials) {
-        bodyContainer.append(createOfficialContainer(officials[official], name, response.normalizedInput.city, response.normalizedInput.state));
+    bodyContainer.append('<h1>' + (officials.length - count) + ' officials found:</h1>');
+    for (const official of officials) {
+        bodyContainer.append(createOfficialContainer(official, response.normalizedInput.city, response.normalizedInput.state));
     }
 
     changeScreen(bodyContainer);
 }
 
-function mapLevels(levels) {
-    switch (levels[0]) {
-        case "country":
-            return 'national';
-        case 'administrativeArea1':
-            return 'state';
-        case 'administrativeArea2':
-            return 'county';
-        case 'locality':
-            return 'city';
-        default:
-            console.log(levels)
-            return levels;
-    }
-}
+function createOfficialContainer(official, city, state) {
+    if (official.display != 'hidden'){
+        const container = $('<div class="officialContainer"></div>');
 
-function createOfficialContainer(official, name, city, state) {
-    const container = $('<div class="officialContainer"></div>');
-
-    container.append('<div class="officialName">' + official.name + '</div>');
-    container.append('<div class="officialOffice">' + official.office + '</div>');
-    container.append(createDivisionContainer(official));
-
-    const infoList = $('<ul></ul>');
-    infoList.append(partyInfo(official));
-    infoList.append(socialInfo(official));
-    infoList.append(phoneInfo(official));
-    infoList.append(emailInfo(official));
+        container.append('<div class="officialName">' + official.name + '</div>');
+        container.append('<div class="officialOffice">' + official.office + '</div>');
+        container.append(createDivisionContainer(official));
     
-    container.append(infoList);
+        const infoList = $('<ul></ul>');
+        infoList.append(partyInfo(official));
+        infoList.append(socialInfo(official));
+        infoList.append(phoneInfo(official));
+        infoList.append(emailInfo(official));
+        
+        container.append(infoList);
+        if (official.display != 'no-auto'){
+            container.append(createEmailButton(official, city, state));
+            container.append(createTweetButton(official));    
+        }
+    
+        return container;
+    } else {
+        return '';
+    }
 
-    container.append(createEmailButton(official, name, city, state));
-    container.append(createTweetButton(official));
-    return container;
 }
 
 function createDivisionContainer(official) {
@@ -129,9 +100,9 @@ function emailInfo(official) {
     return output;
 }
 
-function createEmailButton(official, name, city, state) {
+function createEmailButton(official, city, state) {
     if (official.emails != undefined) {
-        return $('<a class="officialEmail" href="' + makeEmail(name, official, city, state) + '"><button class="officialEmail">Auto Email</button></a>');
+        return $('<a class="officialEmail" href="' + makeEmail(official, city, state) + '"><button class="officialEmail">Auto Email</button></a>');
     } else {
         return '';
     }
