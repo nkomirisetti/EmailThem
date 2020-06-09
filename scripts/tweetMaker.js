@@ -4,5 +4,5 @@ function makeTweet(social) {
 }
 
 function makeTweetText(social){
-    return `@${social.id}, We want to see real action, not a PR statement. What are you doing to protect your black constituents from police brutality? (via komirisetti.com/EmailThem) `;
+    return `@${social.id}, We want to see real action, not a PR statement. What are you doing to protect your Black constituents from police brutality? (via komirisetti.com/EmailThem) `;
 }
