@@ -1,11 +1,12 @@
 function getFilter(official) {
+    // TODO make this more specific
     switch (official.name) {
         case 'Donald J. Trump':
         case 'Mike Pence':
         case 'Paul Ferguson':
             return 'hidden';
-            // case 'Paul Ferguson':
-            //     return 'no-auto';
+        case 'Jennifer Edwards':
+            return 'no-auto';
         default:
             return 'full';
     }
