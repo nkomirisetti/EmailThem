@@ -4,6 +4,10 @@ function getFilter(official) {
         case 'Donald J. Trump':
         case 'Mike Pence':
         case 'Paul Ferguson':
+        case 'Tyler Gernant':
+        case 'David Wall':
+        case 'Shirley Faust':
+        case 'Nicole "Cola" Rowley':
             return 'hidden';
         case 'Jennifer Edwards':
             return 'no-auto';
